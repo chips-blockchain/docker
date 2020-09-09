@@ -1,8 +1,16 @@
 FROM ubuntu:18.04
 ENV BUILD_PACKAGES="software-properties-common autoconf git build-essential libtool libprotobuf-c-dev libgmp-dev libsqlite3-dev python python3 zip libevent-dev pkg-config libssl-dev libcurl4-gnutls-dev make libboost-all-dev automake jq wget ninja-build libsqlite3-dev libgmp3-dev valgrind libcli-dev libsecp256k1-dev libsodium-dev libbase58-dev"
 
-ENV LIGHTNING_REPO https://github.com/jl777/lightning
+#BET repos
+ENV LIGHTNING_REPO https://github.com/chips-blockchain/lightning
 ENV CHIPS_REPO https://github.com/chips-blockchain/chips
+ENV BET https://github.com/chips-blockchain/bet
+
+#Dependencies 
+ENV NANOMSG https://github.com/nanomsg/nng.git
+ENV LIBWEBSOCKETS https://github.com/sg777/libwebsockets.git
+ENV JSMN https://github.com/zserge/jsmn.git
+ENV LIBWALLY https://github.com/ElementsProject/libwally-core.git
 
 RUN apt-get update && \
   apt-get install -y $BUILD_PACKAGES
@@ -48,7 +56,7 @@ RUN ln -sf ~/chips/src/chipsd /usr/local/bin/chipsd && \
 ########### BET ############
 
 RUN cd ~ && \
- git clone https://github.com/nanomsg/nng.git && \
+ git clone $NANOMSG && \
  cd nng && \
  mkdir build && \
  cd build && \
@@ -62,7 +70,7 @@ RUN cd ~ && \
 # Installing libwebsockets
 
 RUN cd ~ && \
-  git clone https://github.com/sg777/libwebsockets.git && \
+  git clone $LIBWEBSOCKETS && \
   cd libwebsockets && \
   mkdir build && \
   cd build && \
@@ -77,12 +85,12 @@ RUN cd ~ && \
 
 # bet dependency
 RUN cd ~ && \
-    git clone https://github.com/zserge/jsmn.git && \
+    git clone $JSMN && \
     cd jsmn && make
 
 # bet dependency
 RUN cd ~ && \
-      git clone https://github.com/ElementsProject/libwally-core.git && \
+      git clone $LIBWALLY && \
       cd libwally-core && \
       ./tools/autogen.sh && \
       ./configure && \
@@ -90,7 +98,7 @@ RUN cd ~ && \
       make check
 
 RUN cd ~ && \
-  git clone https://github.com/sg777/bet.git && \
+  git clone $BET && \
   cd bet && \
   make
 
