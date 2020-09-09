@@ -8,13 +8,13 @@ This is a high level technical overview of everything you need to know about the
 
 ### Terms
 
-`CHIPS` - game token and the name of the poker game project.
+`CHIPS` - game token and the name of the poker project.
 
-`Pangea` - protocol on which the poker game is based
+`Pangea` - protocol on which the poker game is based on
 
-`DCV` - Deck Creating Vendor, the Dealer
+`DCV` - Deck Creating Vendor, the Dealer node
 
-`BVV` - Blinding Value Vendor, the component that helps shuffling the deck
+`BVV` - Blinding Value Vendor, the component that helps securelt shuffle the deck
 
 ## Installation
 
@@ -32,9 +32,11 @@ Note: Make sure to follow Install CHIPS-cli wallet first, the CHIPS daemon shoul
 
 ### Docker
 
+TBA
+
 ## Infrastructure
 
-CHIPS is a bitcoin fork. It uses lightening protocol for the micro transactions that happen withing the game.
+CHIPS is a bitcoin fork. It uses lightening protocol for the micro transactions that happen in the game in real time. For more info see [What is CHIPS?](https://docs.chips.cash/en/latest/faq.html#what-is-chips)
 
 ### Message Communication
 
