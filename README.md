@@ -4,6 +4,8 @@
 
 This is a high level technical overview of everything you need to know about the CHIPS project. Each section has links provided for a more in-depth study.
 
+[CHIPS FAQ](https://docs.chips.cash/en/latest/)
+
 ### Terms
 
 `CHIPS` - game token and the name of the poker game project.
@@ -20,11 +22,19 @@ At the current stage of the project there are a few options of how to install th
 
 ### Manual Installation
 
+Note: Make sure to follow Install CHIPS-cli wallet first, the CHIPS daemon should be synced!
+
+1. [Install CHIPS-cli wallet](https://docs.chips.cash/en/latest/install-cli.html)
+
+2. [Install Lightning Network node](https://docs.chips.cash/en/latest/install-ln.html)
+
+3. [Install BET](https://docs.chips.cash/en/latest/install-bet.html)
+
 ### Docker
 
 ## Infrastructure
 
-CHIPS is a bitcoin fork
+CHIPS is a bitcoin fork. It uses lightening protocol for the micro transactions that happen withing the game.
 
 ### Message Communication
 
