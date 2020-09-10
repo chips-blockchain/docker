@@ -102,13 +102,5 @@ RUN cd ~ && \
   cd bet && \
   make
 
-RUN mkdir /home/chips   
-
-# WORKDIR sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow
-WORKDIR /home/chips
-
 # EXPOSE rpc port for the node to allow outside container access
 EXPOSE 57777 9735
-
-# Drop user into bash shell by default
-CMD ["/bin/bash"]
