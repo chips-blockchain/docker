@@ -172,10 +172,20 @@ Pull the image
 
     - Follow [the official instructions]((https://github.com/chips-blockchain/chips#step-2-create-chips-data-dir-chipsconf-file-and-restrict-access-to-it))
 
-3. [Run the lightning node](https://docs.chips.cash/en/latest/install-ln.html#running-the-lightning-node)
+3. [Run the lightning node](https://github.com/piggydoughnut/chips_docs/blob/doc_updates/source/install-ln.rst)
 
 
-4. [Run bet](https://github.com/chips-blockchain/bet)
+4. Run bet
+
+    Depending on which part of the game you want to run see [the repo instructions](https://github.com/chips-blockchain/bet#configuring-the-table)
+
+    If you simply want to play, you need to run the player node and specify the `DCV` IP, the dealer who runs the table you want to join.
+
+        cd
+
+        cd bet/privatebet
+
+        ./bet player <DCV_IP>
 
 
     If you have not allowed for the ln to sync the script will tell you that it is behind ln by a number of blocks.
@@ -191,7 +201,21 @@ Your lightning network must be synced. If it is not, allow it to sync.
 
     `docker run --net=host --name bet -t -i -v /$HOME/.chips:/root/.chips:rw  -v /$HOME/.chipsln:/root/.chipsln:rw piggydoughnut/bet:v1.3`
 
-2. [Run bet](https://github.com/chips-blockchain/bet)
+2. Run bet
+
+    Depending on which part of the game you want to run see [the repo instructions](https://github.com/chips-blockchain/bet#configuring-the-table)
+
+    If you simply want to play, you need to run the player node and specify the `DCV` IP, the dealer who runs the table you want to join.
+
+        cd
+
+        cd bet/privatebet
+
+        ./bet player <DCV_IP>
+
+
+    If you have not allowed for the ln to sync the script will tell you that it is behind ln by a number of blocks.
+You can either leave the script running until it syncs or come back later when ln has synched and run it again.
 
 <img src="https://media.giphy.com/media/jQWUkD7a4AWfkraBJa/giphy.gif" width="300" height="262" />
 
