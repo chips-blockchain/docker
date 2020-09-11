@@ -10,6 +10,32 @@ WORK IN PROGRESS:
 
 - Testing the https://github.com/NOCTLJRNE/CHIPS-tuto/blob/master/README.md
 
+[About](README.md#about)
+
+- [Terms](README.md#terms)
+- [Infrastructure](README.md#infrastructure)
+    
+    - [Message Communication](README.md#message-communication)
+
+- [Preconditions](README.md#preconditions)
+    
+    - [Public IP address](README.md#public-ip-address)
+
+    - [Port Information](README.md#port-information)    
+
+[Installation](README.md#installation)
+    
+- [Manual Installation](README.md#manual-installation-work-in-progress)
+- [Docker](README.md#docker) 
+
+
+[Compile the Docker image](README.md#compile-the-docker-image)
+
+[More information on the project](README.md#more-information-on-the-project)
+
+[Thank you](README.md#thank-you)
+
+
 ## About
 
 This is a high level technical overview of everything you need to know about the CHIPS project. Each section has links provided for a more in-depth study.
@@ -28,6 +54,27 @@ This is a high level technical overview of everything you need to know about the
 
 `Cashier` or `Notary` nodes - The trusted nodes in the network and are elcted and chosen by the community. The set of trusted nodes at the moment are [here](https://github.com/chips-blockchain/bet/blob/master/privatebet/config/cashier_nodes.json).
 
+
+### Infrastructure
+
+CHIPS is a bitcoin fork. It uses lightening protocol for the micro transactions that happen in the game in real time. For more info see [What is CHIPS?](https://docs.chips.cash/en/latest/faq.html#what-is-chips)
+
+#### Message Communication
+
+All the communication in the game must happen though `DCV`. Pangea Protocol does not allow any direct communication between the Players and the `BVV`. Players and `BVV` connect to `DCV` via `NN_PUSH/NN_PULL` socket. If any entity in the game is willing to send a message, it sends it to `DCV` via `NN_PUSH`, and `DCV` receives it via `NN_PULL`.
+
+<img src="assets/PULL.png" width="500">
+
+Once the `DCV` receives the messages it publishes it via `NN_PUB` and since Players and `BVV` are subscribed to `DCV` via `NN_SUB` so whenever the `DCV` publishes messages the Players and `BVV` receive it.
+
+<img src="assets/Messages.png" width="500">
+
+Source: Pangea Protocol Whitepaper (authors: [sg777](https://github.com/sg777), [jl777](https://github.com/jl777/))
+
+If you want to know all the details please refer to the [Pangea Protocol Whitepaper](https://cdn.discordapp.com/attachments/455737840668770315/456036359870611457/Unsolicited_PANGEA_WP.pdf)
+
+
+## Installation
 
 ### Preconditions
 
@@ -145,7 +192,7 @@ Your lightning network must be synced. If it is not, allow it to sync.
 
 3. [Run bet](https://github.com/chips-blockchain/bet)
 
-### Compile the Docker image yourself
+## Compile the Docker image
 
 If you want to collaborate on the Dockerfile or feel the desire to recompile the image yourself.
 
@@ -159,25 +206,6 @@ Run the image
 
     `docker run --net=host --name bet -dit image-id`
 
-
-
-## Infrastructure
-
-CHIPS is a bitcoin fork. It uses lightening protocol for the micro transactions that happen in the game in real time. For more info see [What is CHIPS?](https://docs.chips.cash/en/latest/faq.html#what-is-chips)
-
-### Message Communication
-
-All the communication in the game must happen though `DCV`. Pangea Protocol does not allow any direct communication between the Players and the `BVV`. Players and `BVV` connect to `DCV` via `NN_PUSH/NN_PULL` socket. If any entity in the game is willing to send a message, it sends it to `DCV` via `NN_PUSH`, and `DCV` receives it via `NN_PULL`.
-
-<img src="./assets/PULL.png" width="500">
-
-Once the `DCV` receives the messages it publishes it via `NN_PUB` and since Players and `BVV` are subscribed to `DCV` via `NN_SUB` so whenever the `DCV` publishes messages the Players and `BVV` receive it.
-
-<img src="./assets/Messages.png" width="500">
-
-Source: Pangea Protocol Whitepaper (authors: [sg777](https://github.com/sg777), [jl777](https://github.com/jl777/))
-
-If you want to know all the details please refer to the [Pangea Protocol Whitepaper](https://cdn.discordapp.com/attachments/455737840668770315/456036359870611457/Unsolicited_PANGEA_WP.pdf)
 
 ## More information on the project
 
