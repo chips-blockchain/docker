@@ -132,7 +132,7 @@ You can:
 
 Pull the image
     
-    `docker pull piggydoughnut/bet:v1.3`
+    docker pull piggydoughnut/bet:v1.3
 
 ---------------------
 #### Run all inside the container
@@ -201,15 +201,15 @@ Your lightning network must be synced. If it is not, allow it to sync.
 
 If you want to collaborate on the Dockerfile or feel the desire to recompile the image yourself.
 
-    `docker build .`
+    docker build .
 
 You need the `image-id` of the built image
 
-    `docker images`
+    docker images
 
 Run the image
 
-    `docker run --net=host --name bet -dit image-id`
+    docker run --net=host --name bet -dit image-id
 
 
 ## More information on the project
