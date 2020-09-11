@@ -125,7 +125,7 @@ At the current stage of the project there are a few options of how to install th
 
 [Docker image lives here](https://hub.docker.com/r/piggydoughnut/bet)
 
-The Docker image has all the necessary libraries, dependencies and all have been installed, compiled, built, cloned, etc. You only need to start the processes needed for the game to work.
+The Docker image has all the necessary libraries, dependencies and all have been installed, compiled, built, cloned, etc. You only need to start the processes needed for the game to work and do some configuration.
 
 Everything lives in the home folder `cd ~`
 
@@ -148,11 +148,9 @@ Pull the image
 
     > Note: the Docker container will use your VPS's host network so your player IP will be your VPS IP
 
-2. [Run Chips](https://github.com/chips-blockchain/chips#step-2-create-chips-data-dir-chipsconf-file-and-restrict-access-to-it)
+2. Run Chips
 
-    - `rpcuser` and `rpcpassword` values can be anything you want
-
-    - You could download chips blocks to speed up the sync if you want.
+    - You can download chips blocks to speed up the sync if you want.
 
 
             Download and extract bootstrap files:
@@ -169,6 +167,10 @@ Pull the image
 
 
             Use df -H to get a readout of used diskspace if needed.
+
+    > Note: `rpcuser` and `rpcpassword` values can be anything you want
+
+    - Follow [the official instructions]((https://github.com/chips-blockchain/chips#step-2-create-chips-data-dir-chipsconf-file-and-restrict-access-to-it))
 
 3. [Run the lightning node](https://docs.chips.cash/en/latest/install-ln.html#running-the-lightning-node)
 
