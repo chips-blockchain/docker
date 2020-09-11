@@ -193,8 +193,7 @@ Your lightning network must be synced. If it is not, allow it to sync.
 
 3. [Run bet](https://github.com/chips-blockchain/bet)
 
-
-<iframe src="https://giphy.com/embed/oGO1MPNUVbbk4" width="480" height="362" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/nfl-chicago-bears-draft-oGO1MPNUVbbk4">via GIPHY</a></p>
+<img src="https://media.giphy.com/media/jQWUkD7a4AWfkraBJa/giphy.gif" width="300" height="262" />
 
 ## Compile the Docker image
 
