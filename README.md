@@ -170,7 +170,7 @@ Pull the image
 
     > Note: `rpcuser` and `rpcpassword` values can be anything you want
 
-    - Follow [the official instructions]((https://github.com/chips-blockchain/chips#step-2-create-chips-data-dir-chipsconf-file-and-restrict-access-to-it))
+    - Follow [the repo instructions](https://github.com/chips-blockchain/chips#step-2-create-chips-data-dir-chipsconf-file-and-restrict-access-to-it)
 
 3. [Run the lightning node](https://github.com/piggydoughnut/chips_docs/blob/doc_updates/source/install-ln.rst)
 
