@@ -142,13 +142,11 @@ Pull the image
 
     `docker run --net=host --name bet -t -i piggydoughnut/bet:v1.3`
 
+    All the necessary libraries have been installed and compiled and all lives in the home folder `cd ~`
+
     note: the Docker container will use your VPS's host network so your player IP will be your VPS IP
 
-2. Enter the Docker container
-
-    `docker exec -it bet bash`
-
-3. [Run Chips](https://github.com/chips-blockchain/chips#step-2-create-chips-data-dir-chipsconf-file-and-restrict-access-to-it)
+2. [Run Chips](https://github.com/chips-blockchain/chips#step-2-create-chips-data-dir-chipsconf-file-and-restrict-access-to-it)
 
     - `rpcuser` and `rpcpassword` values can be anything you want
 
@@ -170,10 +168,10 @@ Pull the image
 
             Use df -H to get a readout of used diskspace if needed.
 
-4. [Run the lightning node](https://docs.chips.cash/en/latest/install-ln.html#running-the-lightning-node)
+3. [Run the lightning node](https://docs.chips.cash/en/latest/install-ln.html#running-the-lightning-node)
 
 
-5. [Run bet](https://github.com/chips-blockchain/bet)
+4. [Run bet](https://github.com/chips-blockchain/bet)
 
 
     If you have not allowed for the ln to sync the script will tell you that it is behind ln by a number of blocks.
@@ -189,11 +187,7 @@ Your lightning network must be synced. If it is not, allow it to sync.
 
     `docker run --net=host --name bet -t -i -v /$HOME/.chips:/root/.chips:rw  -v /$HOME/.chipsln:/root/.chipsln:rw piggydoughnut/bet:v1.3`
 
-2. Enter the Docker container
-
-    `docker exec -it bet bash`
-
-3. [Run bet](https://github.com/chips-blockchain/bet)
+2. [Run bet](https://github.com/chips-blockchain/bet)
 
 <img src="https://media.giphy.com/media/jQWUkD7a4AWfkraBJa/giphy.gif" width="300" height="262" />
 
@@ -225,3 +219,5 @@ This guide uses information from the following repositories. Thank you very much
 - https://github.com/NOCTLJRNE/CHIPS-tuto/blob/master/README.md
 
 - https://github.com/chips-blockchain/bet
+
+- [JCharming](https://github.com/Jcharming) for all the help testing the instructions
