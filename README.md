@@ -10,6 +10,8 @@ WORK IN PROGRESS:
 
 - Testing the https://github.com/NOCTLJRNE/CHIPS-tuto/blob/master/README.md
 
+_______________
+
 [About](README.md#about)
 
 - [Terms](README.md#terms)
@@ -35,6 +37,7 @@ WORK IN PROGRESS:
 
 [Thank you](README.md#thank-you)
 
+_______________
 
 ## About
 
@@ -174,8 +177,6 @@ Pull the image
     If you have not allowed for the ln to sync the script will tell you that it is behind ln by a number of blocks.
 You can either leave the script running until it syncs or come back later when ln has synched and run it again.
 
-6. You are all done
-
 
 ---------------------
 #### Plug in your `ln` and `chips` to the container
@@ -191,6 +192,9 @@ Your lightning network must be synced. If it is not, allow it to sync.
     `docker exec -it bet bash`
 
 3. [Run bet](https://github.com/chips-blockchain/bet)
+
+
+<iframe src="https://giphy.com/embed/oGO1MPNUVbbk4" width="480" height="362" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/nfl-chicago-bears-draft-oGO1MPNUVbbk4">via GIPHY</a></p>
 
 ## Compile the Docker image
 

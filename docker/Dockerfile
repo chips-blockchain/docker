@@ -63,8 +63,6 @@ RUN cd ~ && \
  cmake -G Ninja .. && \
  cd ~/nng/build && \
  ls -l && \
-#  ninja && \
-#  ninja test -v && \
  ninja install
 
 # Installing libwebsockets
@@ -77,8 +75,6 @@ RUN cd ~ && \
   cmake -DLWS_WITH_HTTP2=1 .. && \
   make && \
   make install && \
-  # cmake .. && \
-  # make && make install && \
   ldconfig /usr/local/lib
 
 #Installing Bet
