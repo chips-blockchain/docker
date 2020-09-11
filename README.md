@@ -123,12 +123,16 @@ At the current stage of the project there are a few options of how to install th
 
 ### Docker
 
+[Docker image lives here](https://hub.docker.com/r/piggydoughnut/bet)
+
+The Docker image has all the necessary libraries, dependencies and all have been installed, compiled, built, cloned, etc. You only need to start the processes needed for the game to work.
+
+Everything lives in the home folder `cd ~`
+
 You can:
 
 - run the Docker container and run `chips` and `ln` inside of it 
 - plug in your `ln` and `chips` that will run outside of the container
-
-[Docker image lives here](https://hub.docker.com/r/piggydoughnut/bet)
 
 Pull the image
     
@@ -142,9 +146,7 @@ Pull the image
 
     `docker run --net=host --name bet -t -i piggydoughnut/bet:v1.3`
 
-    All the necessary libraries have been installed and compiled and all lives in the home folder `cd ~`
-
-    note: the Docker container will use your VPS's host network so your player IP will be your VPS IP
+    > Note: the Docker container will use your VPS's host network so your player IP will be your VPS IP
 
 2. [Run Chips](https://github.com/chips-blockchain/chips#step-2-create-chips-data-dir-chipsconf-file-and-restrict-access-to-it)
 
