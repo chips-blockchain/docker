@@ -128,6 +128,8 @@ You can:
 - run the Docker container and run `chips` and `ln` inside of it 
 - plug in your `ln` and `chips` that will run outside of the container
 
+[Docker image lives here](https://hub.docker.com/r/piggydoughnut/bet)
+
 Pull the image
     
     `docker pull piggydoughnut/bet:v1.3`
