@@ -59,6 +59,11 @@ RUN ln -sf ~/chips/src/chipsd /usr/local/bin/chipsd && \
   ln -sf ~/chips/src/chips-cli /usr/local/bin/chips-cli && \
   ln -sf ~/lightning/lightningd/lightningd /usr/local/bin/lightning
 
+# lightning-cli terminal shortcut
+RUN cd /usr/bin/ && \
+  echo "#/bin/bash \n ~/lightning/cli/lightning-cli $1 $2 $3 $4 $5 $6 | jq ." > lightning-cli && \
+  chmod +x /usr/bin/lightning-cli
+
 ########### BET ############
 
 RUN cd ~ && \

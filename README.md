@@ -155,7 +155,13 @@ Pull the image
 
     - Follow [the repo instructions](https://github.com/chips-blockchain/chips#step-2-create-chips-data-dir-chipsconf-file-and-restrict-access-to-it)
 
-3. [Run the lightning node](https://github.com/piggydoughnut/chips_docs/blob/doc_updates/source/install-ln.rst)
+3. Run the lightning node
+    
+    # Create a tmux session
+    tmux new -s lightning
+    # Then inside the tmux session you've just created
+    ~/lightning/lightningd/lightningd --log-level=debug &
+    # CTRL + B, then D to detach from the tmux session.
 
 
 4. Run bet
