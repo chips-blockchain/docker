@@ -131,7 +131,8 @@ Everything lives in the home folder `cd ~`
 
 You can:
 
-- run the Docker container and run `chips` and `ln` inside of it 
+- run the Docker container and run `chips` and `ln` inside of it  
+OR
 - plug in your `ln` and `chips` that will run outside of the container
 
 Pull the image

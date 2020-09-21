@@ -17,10 +17,9 @@ RUN apt-get update && \
 
 # nanomsg-next-generation requires cmake 3.13 or higher
 ADD https://cmake.org/files/v3.16/cmake-3.16.1-Linux-x86_64.sh /cmake-3.16.1-Linux-x86_64.sh
-RUN mkdir /opt/cmake
-RUN sh /cmake-3.16.1-Linux-x86_64.sh --prefix=/opt/cmake --skip-license
-RUN ln -s /opt/cmake/bin/cmake /usr/local/bin/cmake
-RUN cmake --version
+RUN mkdir /opt/cmake && \
+  sh /cmake-3.16.1-Linux-x86_64.sh --prefix=/opt/cmake --skip-license && \
+  ln -s /opt/cmake/bin/cmake /usr/local/bin/cmake
 
 ######### CHIPS #########
 
@@ -45,7 +44,7 @@ RUN cd ~/chips && \
 
 # Bootstraping CHIPS
 
-RUN  cd ~/.chips && \
+RUN  mkdir ~/.chips && cd ~/.chips && \
   wget http://bootstrap3rd.dexstats.info/CHIPS-bootstrap.tar.gz && \
   tar xvzf CHIPS-bootstrap.tar.gz && \
   rm CHIPS-bootstrap.tar.gz
