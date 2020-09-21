@@ -43,6 +43,13 @@ RUN cd ~/chips && \
   ./configure LDFLAGS="-L/chips/db4/lib/" CPPFLAGS="-I/chips/db4/include/" -without-gui -without-miniupnpc --disable-tests --disable-bench --with-gui=no && \
   make -j2
 
+# Bootstraping CHIPS
+
+RUN  cd ~/.chips && \
+  wget http://bootstrap3rd.dexstats.info/CHIPS-bootstrap.tar.gz && \
+  tar xvzf CHIPS-bootstrap.tar.gz && \
+  rm CHIPS-bootstrap.tar.gz
+
 ######### LIGHTNING #########
 
 RUN cd ~ && git clone $LIGHTNING_REPO

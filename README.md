@@ -150,24 +150,6 @@ Pull the image
 
 2. Run Chips
 
-    - You can download chips blocks to speed up the sync if you want.
-
-
-            Download and extract bootstrap files:
-
-            cd ~/.chips
-            wget http://bootstrap3rd.dexstats.info/CHIPS-bootstrap.tar.gz
-            tar xvzf CHIPS-bootstrap.tar.gz
-
-
-            Delete Bootstrap file once done to clear space
-
-            cd ~/.chips 
-            rm CHIPS-bootstrap.tar.gz
-
-
-            Use df -H to get a readout of used diskspace if needed.
-
     > Note: `rpcuser` and `rpcpassword` values can be anything you want
 
     - Follow [the repo instructions](https://github.com/chips-blockchain/chips#step-2-create-chips-data-dir-chipsconf-file-and-restrict-access-to-it)
