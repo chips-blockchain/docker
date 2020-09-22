@@ -83,12 +83,13 @@ Pull the image
 
 3. Run the lightning node
     
+    ```
     # Create a tmux session
     tmux new -s lightning
     # Then inside the tmux session you've just created
     ~/lightning/lightningd/lightningd --log-level=debug &
     # CTRL + B, then D to detach from the tmux session.
-
+    ```
 
 4. Run bet
 
