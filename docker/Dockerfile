@@ -61,7 +61,7 @@ RUN ln -sf ~/chips/src/chipsd /usr/local/bin/chipsd && \
 
 # lightning-cli terminal shortcut
 RUN cd /usr/bin/ && \
-  echo "#/bin/bash \n ~/lightning/cli/lightning-cli $1 $2 $3 $4 $5 $6 | jq ." > lightning-cli && \
+  echo "#/bin/bash \n ~/lightning/cli/lightning-cli \$1 \$2 \$3 \$4 \$5 \$6 | jq ." > lightning-cli && \
   chmod +x /usr/bin/lightning-cli
 
 ########### BET ############
