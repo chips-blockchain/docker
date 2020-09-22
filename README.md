@@ -1,8 +1,6 @@
 # Setup documentation for CHIPS Poker 
 
-WORK IN PROGRESS:
-
-- Testing out manual installation
+WORK IN PROGRESS: 
 
 - Updating instructions inside of the `bet` repo
 
@@ -41,11 +39,7 @@ At the current stage of the project there are a few options of how to install th
 
 > Note: Make sure to follow Install CHIPS-cli wallet first, the CHIPS daemon should be synced!
 
-1. [Install CHIPS-cli wallet](https://docs.chips.cash/en/latest/install-cli.html)
-
-2. [Install Lightning Network node](https://docs.chips.cash/en/latest/install-ln.html)
-
-3. [Install BET](https://docs.chips.cash/en/latest/install-bet.html)
+[Compilation guide](https://github.com/chips-blockchain/bet/blob/master/compile.md)
 
 ### Docker
 
@@ -158,7 +152,7 @@ Run the image
 
 This guide uses information from the following repositories. Thank you very much for all the provided information.
 
-- https://github.com/Meshbits/chips_docs
+- https://github.com/chips-blockchain/chips_docs
 
 - https://github.com/NOCTLJRNE/CHIPS-tuto/blob/master/README.md
 
