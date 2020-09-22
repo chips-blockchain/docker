@@ -1,20 +1,11 @@
-# Setup documentation for CHIPS Poker 
-
-WORK IN PROGRESS: 
-
-- Updating instructions inside of the `bet` repo
-
-- Updating/testing information on https://docs.chips.cash/en/latest/
-
-- Testing the https://github.com/NOCTLJRNE/CHIPS-tuto/blob/master/README.md
-
+# Docker documentation for CHIPS Poker 
 _______________
 
 [About](README.md#about)
 
 [Installation](README.md#installation)
     
-- [Manual Installation](README.md#manual-installation-work-in-progress)
+- [Manual Installation](README.md#manual-installation)
 - [Docker](README.md#docker) 
 
 [Compile the Docker image](README.md#compile-the-docker-image)
@@ -35,7 +26,7 @@ At the current stage of the project there are a few options of how to install th
 
 > The backend node on which any of the entities of the game are running must possess an IP address which is reachable over the internet. The condition to have a public ip address is mentioned below.
 
-### Manual Installation (Work in progress)
+### Manual Installation
 
 > Note: Make sure to follow Install CHIPS-cli wallet first, the CHIPS daemon should be synced!
 
