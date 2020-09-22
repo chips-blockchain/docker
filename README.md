@@ -36,19 +36,22 @@ At the current stage of the project there are a few options of how to install th
 
 [Docker image lives here](https://hub.docker.com/r/piggydoughnut/bet)
 
+Pull the image
+    
+    docker pull piggydoughnut/bet:v1.3
+
 The Docker image has all the necessary libraries, dependencies and all have been installed, compiled, built, cloned, etc. You only need to start the processes needed for the game to work and do some configuration.
 
 Everything lives in the home folder `cd ~`
 
 You can:
 
-- run the Docker container and run `chips` and `ln` inside of it  
-OR
-- plug in your `ln` and `chips` that will run outside of the container
+- [Run the Docker container and run `chips` and `ln` inside of it](README.md#run-all-inside-the-container)
 
-Pull the image
-    
-    docker pull piggydoughnut/bet:v1.3
+OR
+
+- [Plug in your `ln` and `chips` that will run outside of the container](README.md#plug-in-your-ln-and-chips-to-the-container)
+
 
 ---------------------
 #### Run all inside the container
