@@ -68,6 +68,10 @@ OR
     > Note: `rpcuser` and `rpcpassword` values can be anything you want
 
     - Follow [the repo instructions](https://github.com/chips-blockchain/chips#step-2-create-chips-data-dir-chipsconf-file-and-restrict-access-to-it)
+    
+    ```
+    
+    ```
 
 3. Run the lightning node
     
@@ -89,7 +93,7 @@ OR
 
         cd bet/privatebet
 
-        ./bet player <DCV_IP>
+        ./bet player
 
 
     If you have not allowed for the ln to sync the script will tell you that it is behind ln by a number of blocks.
