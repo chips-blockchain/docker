@@ -113,13 +113,13 @@ Your lightning network must be synced. If it is not, allow it to sync.
 
     Depending on which part of the game you want to run see [the repo instructions](https://github.com/chips-blockchain/bet#configuring-the-table)
 
-    If you simply want to play, you need to run the player node and specify the `DCV` IP, the dealer who runs the table you want to join.
+    If you simply want to play, you need to run the player node.
 
         cd
 
         cd bet/privatebet
 
-        ./bet player <DCV_IP>
+        ./bet player
 
 
     If you have not allowed for the ln to sync the script will tell you that it is behind ln by a number of blocks.
