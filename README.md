@@ -150,6 +150,9 @@ You can either leave the script running until it syncs or come back later when l
 ### Plug in your `ln` and `chips` to the container
 
 If you do not have the `ln` and `chips` running locally yet but would like to have that setup, see [Compilation guide](https://github.com/chips-blockchain/bet/blob/master/compile.md) for instructions on how to manually run `ln` and `chips`.
+
+You can save yourself some time by only installing relevant dependencies (do not insall bet dependencies, they are marked). Bet dependencies are precompiled in the Docker container.
+
 Your lightning node must be synced. If it is not, allow it to sync. 
 
 1. Run Docker container
