@@ -21,13 +21,9 @@ _______________
 
 ## Installation
 
-At the current stage of the project there are a few options of how to install the game.
-
 > The backend node on which any of the entities of the game are running must possess an IP address which is reachable over the internet. The condition to have a public ip address is mentioned below.
 
 ### Manual Installation
-
-> Note: Make sure to follow Install CHIPS-cli wallet first, the CHIPS daemon should be synced!
 
 [Compilation guide](https://github.com/chips-blockchain/bet/blob/master/compile.md)
 
