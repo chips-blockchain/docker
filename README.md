@@ -1,11 +1,10 @@
 # Docker documentation for CHIPS Poker 
 
-[About](README.md#about)
+[CHIPS FAQ](https://docs.chips.cash/en/latest/)
 
-[Installation](README.md#installation)
-    
-- [Manual Installation](README.md#manual-installation)
-- [Docker](README.md#docker) 
+[Manual Installation](README.md#manual-installation)
+
+[Docker](README.md#docker) 
 
 [Compile the Docker image](README.md#compile-the-docker-image)
 
@@ -15,19 +14,13 @@
 
 _______________
 
-## About
-
-[CHIPS FAQ](https://docs.chips.cash/en/latest/)
-
-## Installation
-
 > The backend node on which any of the entities of the game are running must possess an IP address which is reachable over the internet. The condition to have a public ip address is mentioned below.
 
-### Manual Installation
+## Manual Installation
 
 [Compilation guide](https://github.com/chips-blockchain/bet/blob/master/compile.md)
 
-### Docker
+## Docker
 
 [Docker image lives here](https://hub.docker.com/r/piggydoughnut/bet)
 
@@ -43,13 +36,15 @@ You can:
 
 - [Run the Docker container and run `chips` and `ln` inside of it](README.md#run-all-inside-the-container)
 
+  Be aware, if you delete your Docker container by accident you can loose the synced LN, your wallet, etc.
+
 OR
 
 - [Plug in your `ln` and `chips` that will run outside of the container](README.md#plug-in-your-ln-and-chips-to-the-container)
 
 
 ---------------------
-#### Run all inside the container
+### Run all inside the container
 
 
 1. Run Docker container
@@ -63,7 +58,7 @@ OR
 
 #### Create `chips.conf` file
 
-    Create chips.conf file with random username, password, txindex and daemon turned on:
+Create chips.conf file with random username, password, txindex and daemon turned on:
     
     ```shell
     cd ~
@@ -71,7 +66,7 @@ OR
     nano .chips/chips.conf
     ```
 
-    Add the following lines into your `chips.conf` file
+Add the following lines into your `chips.conf` file
 
     ```JSON
     server=1
@@ -90,30 +85,34 @@ OR
     rpcallowip=127.0.0.1
     ```
 
-    #### Symlinking the binaries
+#### Symlinking the binaries
     ```shell
     sudo ln -sf /home/$USER/chips/src/chips-cli /usr/local/bin/chips-cli
     sudo ln -sf /home/$USER/chips/src/chipsd /usr/local/bin/chipsd
     sudo chmod +x /usr/local/bin/chips-cli
     sudo chmod +x /usr/local/bin/chipsd
     ```
-
-    #### Run
+#### Run
     ```shell
     cd ~
     cd chips/src
     ./chipsd &
     ```
 
-    #### Check
+#### Check
     ```shell
     chips-cli getinfo
     ```
 
-    #### Preview block download status
+#### Preview block download status
     cd ~
     cd .chips
     tail -f debug.log
+
+#### Fund you address
+    ```
+    chips-cli getnewaddress
+    ```
 
 3. Run the lightning node
     
@@ -143,9 +142,9 @@ You can either leave the script running until it syncs or come back later when l
 
 
 ---------------------
-#### Plug in your `ln` and `chips` to the container
+### Plug in your `ln` and `chips` to the container
 
-Your lightning network must be synced. If it is not, allow it to sync.
+Your lightning node must be synced. If it is not, allow it to sync.
 
 1. Run Docker container
 
@@ -155,14 +154,18 @@ Your lightning network must be synced. If it is not, allow it to sync.
 
     Depending on which part of the game you want to run see [the repo instructions](https://github.com/chips-blockchain/bet#configuring-the-table)
 
-    If you simply want to play, you need to run the player node.
+    If you want to play, you need to run the player node. The player node will automatically connect to an available dealer.
 
-        cd
-
-        cd bet/privatebet
+        cd ~/bet/privatebet
 
         ./bet player
 
+
+    If you want to host the game, you need to run the dealer node.
+
+        cd ~/bet/privatebet
+
+        ./bet dcv <dcv-ip>
 
     If you have not allowed for the ln to sync the script will tell you that it is behind ln by a number of blocks.
 You can either leave the script running until it syncs or come back later when ln has synched and run it again.
