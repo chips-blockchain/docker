@@ -1,20 +1,19 @@
 # Docker documentation for CHIPS Poker 
 
-[CHIPS FAQ](https://docs.chips.cash/en/latest/)
-
 [Manual Installation](README.md#manual-installation)
 
 [Docker](README.md#docker) 
 
 [Compile the Docker image](README.md#compile-the-docker-image)
 
-[More information on the project](README.md#more-information-on-the-project)
+[FAQ](README.md#more-information-on-the-project)
 
 [Thank you](README.md#thank-you)
 
 _______________
 
-> The backend node on which any of the entities of the game are running must possess an IP address which is reachable over the internet. The condition to have a public ip address is mentioned below.
+> Any of the nodes which are used to play must have a publicly accessible IP.
+
 
 ## Manual Installation
 
@@ -56,9 +55,9 @@ OR
 2. Run Chips
 
 
-#### Create `chips.conf` file
+    #### Create `chips.conf` file
 
-Create chips.conf file with random username, password, txindex and daemon turned on:
+    Create chips.conf file with random username, password, txindex and daemon turned on:
     
     ```shell
     cd ~
@@ -66,7 +65,7 @@ Create chips.conf file with random username, password, txindex and daemon turned
     nano .chips/chips.conf
     ```
 
-Add the following lines into your `chips.conf` file
+    Add the following lines into your `chips.conf` file
 
     ```JSON
     server=1
@@ -85,31 +84,31 @@ Add the following lines into your `chips.conf` file
     rpcallowip=127.0.0.1
     ```
 
-#### Symlinking the binaries
+    #### Symlinking the binaries
     ```shell
     sudo ln -sf /home/$USER/chips/src/chips-cli /usr/local/bin/chips-cli
     sudo ln -sf /home/$USER/chips/src/chipsd /usr/local/bin/chipsd
     sudo chmod +x /usr/local/bin/chips-cli
     sudo chmod +x /usr/local/bin/chipsd
     ```
-#### Run
+    #### Run
     ```shell
     cd ~
     cd chips/src
     ./chipsd &
     ```
 
-#### Check
+    #### Check
     ```shell
     chips-cli getinfo
     ```
 
-#### Preview block download status
+    #### Preview block download status
     cd ~
     cd .chips
     tail -f debug.log
 
-#### Fund you address
+    #### Fund you address
     ```
     chips-cli getnewaddress
     ```
@@ -128,14 +127,18 @@ Add the following lines into your `chips.conf` file
 
     Depending on which part of the game you want to run see [the repo instructions](https://github.com/chips-blockchain/bet#configuring-the-table)
 
-    If you simply want to play, you need to run the player node and specify the `DCV` IP, the dealer who runs the table you want to join.
+    If you want to play, you need to run the player node. The player node will automatically connect to an available dealer.
 
-        cd
-
-        cd bet/privatebet
+        cd ~/bet/privatebet
 
         ./bet player
 
+
+    If you want to host the game, you need to run the dealer node.
+
+        cd ~/bet/privatebet
+
+        ./bet dcv <dcv-ip>
 
     If you have not allowed for the ln to sync the script will tell you that it is behind ln by a number of blocks.
 You can either leave the script running until it syncs or come back later when ln has synched and run it again.
