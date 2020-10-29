@@ -10,8 +10,6 @@
 
 [Thank you](README.md#thank-you)
 
-_______________
-
 > Any of the nodes which are used to play must have a publicly accessible IP.
 
 
@@ -104,9 +102,11 @@ OR
     ```
 
     #### Preview block download status
+    ```
     cd ~
     cd .chips
     tail -f debug.log
+    ```
 
     #### Fund you address
     ```
@@ -114,6 +114,8 @@ OR
     ```
 
 3. Run the lightning node
+
+    It might take quite a while to sync.
     
     ```
     # Create a tmux session
@@ -147,7 +149,8 @@ You can either leave the script running until it syncs or come back later when l
 ---------------------
 ### Plug in your `ln` and `chips` to the container
 
-Your lightning node must be synced. If it is not, allow it to sync.
+If you do not have the `ln` and `chips` running locally yet but would like to have that setup, see [Compilation guide](https://github.com/chips-blockchain/bet/blob/master/compile.md) for instructions on how to manually run `ln` and `chips`.
+Your lightning node must be synced. If it is not, allow it to sync. 
 
 1. Run Docker container
 
