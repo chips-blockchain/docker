@@ -8,7 +8,7 @@ You are only running things.**
 
 1. ### Run Docker container
 
-    `docker run --net=host --name bet -t -i piggydoughnut/bet:v1.3`
+    `docker run --net=host --name bet -t -i piggydoughnut/bet:v1.4`
 
     > Note: the Docker container will use your VPS's host network so your player IP will be your VPS IP
 
