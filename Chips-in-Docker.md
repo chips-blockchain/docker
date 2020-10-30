@@ -13,57 +13,57 @@ You are only running things.**
     > Note: the Docker container will use your VPS's host network so your player IP will be your VPS IP
 
 2. ### Running CHIPS
-
-  #### Create `chips.conf` file
-
-  Create chips.conf file with random username, password, txindex and daemon turned on:
     
-  ```shell
-  cd ~
-  mkdir .chips
-  nano .chips/chips.conf
-  ```
+    #### Create `chips.conf` file
 
-  Add the following lines into your `chips.conf` file
+    Create chips.conf file with random username, password, txindex and daemon turned on:
+    
+      ```shell
+      cd ~
+      mkdir .chips
+      nano .chips/chips.conf
+      ```
 
-  ```JSON
-  server=1
-  daemon=1
-  txindex=1
-  rpcuser=chipsuser
-  rpcpassword=passworddrowssap
-  addnode=159.69.23.29
-  addnode=95.179.192.102
-  addnode=149.56.29.163
-  addnode=145.239.149.173
-  addnode=178.63.53.110
-  addnode=151.80.108.76
-  addnode=185.137.233.199
-  rpcbind=127.0.0.1
-  rpcallowip=127.0.0.1
-  ```
+      Add the following lines into your `chips.conf` file
 
-  #### Run
-  ```shell
-  cd ~
-  cd chips/src
-  ./chipsd &
-  ```
+      ```JSON
+      server=1
+      daemon=1
+      txindex=1
+      rpcuser=chipsuser
+      rpcpassword=passworddrowssap
+      addnode=159.69.23.29
+      addnode=95.179.192.102
+      addnode=149.56.29.163
+      addnode=145.239.149.173
+      addnode=178.63.53.110
+      addnode=151.80.108.76
+      addnode=185.137.233.199
+      rpcbind=127.0.0.1
+      rpcallowip=127.0.0.1
+      ```
 
-  #### Check
-  ```shell
-  chips-cli getinfo
-  ```
+      #### Run
+      ```shell
+      cd ~
+      cd chips/src
+      ./chipsd &
+      ```
 
-  #### Preview block download status
-  ```
-  cd ~
-  cd .chips
-  tail -f debug.log
-  ```
+      #### Check
+      ```shell
+      chips-cli getinfo
+      ```
+
+      #### Preview block download status
+      ```
+      cd ~
+      cd .chips
+      tail -f debug.log
+      ```
 
 
-3. Run the lightning node
+3. ### Run the lightning node
 
     LN will need a while to sync. It could take some time so its a good idea to run it in a tmux session.
     
@@ -94,7 +94,7 @@ You are only running things.**
 
     [Tmux cheatsheet](https://tmuxcheatsheet.com/)
 
-4. Run bet
+4. ### Run bet
     
     Run the node that you need to run. Are you hosting a game? -> Run Dealer. Do you just want to play the game and someone is hosting it for you? -> Run Player.
     
