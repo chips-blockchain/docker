@@ -3,6 +3,8 @@
 ---------------------
 ### Run all inside the container
 
+> **Be aware that Docker has EVERYTHING already installed, so you are not installing anything
+You are only running things.**
 
 1. Run Docker container
 
