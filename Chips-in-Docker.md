@@ -1,4 +1,4 @@
-# Pangea Docker container without plugging in local CHIPS and LN
+# Pangea Docker container with CHIPS and LN inside the container
 
 ---------------------
 ## Run all inside the container
