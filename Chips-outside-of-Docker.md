@@ -75,6 +75,16 @@ $ rm CHIPS-bootstrap.tar.gz
   cd chips/src
   ./chipsd &
   ```
+  
+         
+  If you see something like this, the CHIPS daemon is still starting, give it a minute and try again.
+  ```shell
+  chips-cli getinfo
+  error code: -28
+  error message:
+  Loading block index...
+  ```
+      
 
   #### Check
   ```shell
@@ -86,6 +96,22 @@ $ rm CHIPS-bootstrap.tar.gz
   cd ~
   cd .chips
   tail -f debug.log
+  ```
+  
+  Once it starts syncing you will see something like this
+  ```shell
+  2020-10-31T00:27:04Z UpdateTip: new best=00000013f930811f3c9d76be9447649e1f293208b8588fc7dae369cfc26fb024 height=7201018 version=0x20000000 log2_work=75.981897 tx=7435894 date='2020-10-31T00:27:03Z' progress=1.000000 cache=0.9MiB(6110txo)
+  2020-10-31T00:27:08Z UpdateTip: new best=00000021bb8dd11b3a07b9e098518678255cf81fc8788fde018c3045e946f50a height=7201019 version=0x20000000 log2_work=75.981897 tx=7435895 date='2020-10-31T00:27:08Z' progress=1.000000 cache=0.9MiB(6111txo)
+  2020-10-31T00:27:08Z AddToWallet d503a920f1070ecfbbb075f2c5f44f61b43b0fe8edea3a5287d95ef4efc782d3  new
+  2020-10-31T00:27:26Z UpdateTip: new best=0000004729a5696107b0e3105f48e5270b7678120984e5f0314885531142fac3 height=7201020 version=0x20000000 log2_work=75.981897 tx=7435896 date='2020-10-31T00:27:26Z' progress=1.000000 cache=0.9MiB(6112txo)
+  2020-10-31T00:27:26Z AddToWallet d4892b77f8b03d9606c343f4c465af4bc40cfd9e65b56af80d51779f6680fe6a  new
+  ```
+
+  If you see the following, its okay, dont mind it.
+  ```shell
+  2020-10-31T00:23:37Z connect() to 145.239.149.173:57777 failed after select(): Connection refused (111)
+  2020-10-31T00:23:38Z connect() to 178.63.53.110:57777 failed after select(): Connection refused (111)
+  2020-10-31T00:23:38Z connect() to 151.80.108.76:57777 failed after select(): Connection refused (111)
   ```
 
 ### Installing Lightning Network Node
