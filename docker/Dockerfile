@@ -111,3 +111,5 @@ RUN cd ~ && \
 
 # EXPOSE rpc port for the node to allow outside container access
 EXPOSE 57777 9735
+
+CMD cd ~/bet/privatebet/scripts && ./runservices.sh
