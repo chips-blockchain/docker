@@ -4,6 +4,12 @@
 > **Be aware that Docker has EVERYTHING already installed, so you are not installing anything
 You are only running things.**
 
+Each entity of the game (dealer, player) needs a separate IP address and a separate container to be run.
+E.g. I want to run a player node and a dealer node. I need:
+- two servers, each having a publicly accessible IP
+- run Docker container on each server
+- run dealer node inside of the first container
+- run player node inside of the second container
 
 1. ## Pull and run the docker image
 
