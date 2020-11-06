@@ -6,116 +6,64 @@
 > **Be aware that Docker has EVERYTHING already installed, so you are not installing anything
 You are only running things.**
 
+Join the [CHIPS discord](https://discord.gg/bcSpzWb) to get a small amount of CHIPS
+
 1. ### Run Docker container
 
-    `docker run --net=host --name bet -t -i piggydoughnut/bet:v1.4`
+    The Docker container will run as a daemon.
+
+    `docker run --net=host --name bet -dit piggydoughnut/bet:v1.5`
 
     > Note: the Docker container will use your VPS's host network so your player IP will be your VPS IP
 
-2. ### Running CHIPS
-    
-    #### Create `chips.conf` file
+2. ### Run LN and Chips
 
-    Create chips.conf file with random username, password, txindex and daemon turned on:
-    
-      ```shell
-      cd ~
-      mkdir .chips
-      nano .chips/chips.conf
-      ```
+    Enter the Docker container terminal
 
-      Add the following lines into your `chips.conf` file
+    `sudo docker exec -it bet bash`
 
-      ```JSON
-      server=1
-      daemon=1
-      txindex=1
-      rpcuser=chipsuser
-      rpcpassword=passworddrowssap
-      addnode=159.69.23.29
-      addnode=95.179.192.102
-      addnode=149.56.29.163
-      addnode=145.239.149.173
-      addnode=178.63.53.110
-      addnode=151.80.108.76
-      addnode=185.137.233.199
-      rpcbind=127.0.0.1
-      rpcallowip=127.0.0.1
-      ```
+    Run LN and CHIPS
 
-      #### Run
-      ```shell
-      cd ~
-      cd chips/src
-      ./chipsd &
-      ```
+    `./root/bet/scripts/runservices.sh`
 
-      #### Check
-      ```shell
-      chips-cli getinfo
-      ```
-       
-      If you see something like this, the CHIPS daemon is still starting, give it a minute and try again.
-      ```shell
-      chips-cli getinfo
-      error code: -28
-      error message:
-      Loading block index...
-      ```
-      
-      #### Preview block download status
-      ```
-      cd ~
-      cd .chips
-      tail -f debug.log
-      ```
-      
-      Once it starts syncing you will see something like this
-      ```shell
-      2020-10-31T00:27:04Z UpdateTip: new best=00000013f930811f3c9d76be9447649e1f293208b8588fc7dae369cfc26fb024 height=7201018 version=0x20000000 log2_work=75.981897 tx=7435894 date='2020-10-31T00:27:03Z' progress=1.000000 cache=0.9MiB(6110txo)
-      2020-10-31T00:27:08Z UpdateTip: new best=00000021bb8dd11b3a07b9e098518678255cf81fc8788fde018c3045e946f50a height=7201019 version=0x20000000 log2_work=75.981897 tx=7435895 date='2020-10-31T00:27:08Z' progress=1.000000 cache=0.9MiB(6111txo)
-      2020-10-31T00:27:08Z AddToWallet d503a920f1070ecfbbb075f2c5f44f61b43b0fe8edea3a5287d95ef4efc782d3  new
-      2020-10-31T00:27:26Z UpdateTip: new best=0000004729a5696107b0e3105f48e5270b7678120984e5f0314885531142fac3 height=7201020 version=0x20000000 log2_work=75.981897 tx=7435896 date='2020-10-31T00:27:26Z' progress=1.000000 cache=0.9MiB(6112txo)
-      2020-10-31T00:27:26Z AddToWallet d4892b77f8b03d9606c343f4c465af4bc40cfd9e65b56af80d51779f6680fe6a  new
-      ```
+    The output will look like this
 
-      If you see the following, its okay, dont mind it.
-      ```shell
-      2020-10-31T00:23:37Z connect() to 145.239.149.173:57777 failed after select(): Connection refused (111)
-      2020-10-31T00:23:38Z connect() to 178.63.53.110:57777 failed after select(): Connection refused (111)
-      2020-10-31T00:23:38Z connect() to 151.80.108.76:57777 failed after select(): Connection refused (111)
-      ```
 
-3. ### Run the lightning node
+    ```shell
+    This will take about 3-5 minutes. Please be patient.
 
-    LN will need a while to sync. It could take some time so its a good idea to run it in a tmux session.
-    
+    Creating CHIPS config
+    nonce.9250234
+    0000006e75f6aa0efdbf7db03132aa4e4d0c84951537a6f5a7c39a0a9d30e1e7 <- genesis
+    9bd1c477af8993947cdd9052c0e4c287fda95987b3cc8934b3769d7503852715 <- merkle
+    Chips server starting
+    |................................................................................| 100 % finished
+    Starting Lightning node
+    |................................................................................| 100 % finished
+
+    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+    CHIPS and Lightning Node are running
+
+    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+    NEXT STEPS
+
+    1. FUND YOUR CHIPS ADDRESS with CHIPS to be able to join the game.
+    { "address": "bUBbFW6yYTH3qXmynTyBtQ1FEcVSDT7ZNw" }
+
+    2. Run bet (player OR dealer).
+
+    DEALER
+    cd ~/bet/privatebet && ./bet dcv 45.77.139.155
+
+    PLAYER
+    cd ~/bet/privatebet && ./bet player
     ```
-    # Create a tmux session
-    $ tmux new -s lightning
 
-    # Then inside the tmux session you've just created
-    $ ~/lightning/lightningd/lightningd --log-level=debug &
-    # CTRL + B, then D to detach from the tmux session, to attach to the session again `tmux a -t lightning`
+3. ### Fund your CHIPS address. 
 
-    # Get chain info - If it returns your node’s id, you’re all set.
-    $ lightning-cli getinfo
-
-    # Get a new address to fund your Lightning Node
-    # This returns an address, which needs to be funded first in order to open a channel with another node.
-    $ lightning-cli newaddr
-
-    # Run the following command to check if your node has funds
-    $ lightning-cli listfunds
-
-    # Optionally, using these two parameters, you can connect to a node visible on the LN explorer
-    $ lightning-cli connect
-    $ lightning-cli fundchannel
-    ```
-    
-    Join the [CHIPS discord](https://discord.gg/bcSpzWb) to get a small amount of CHIPS
-
-    [Tmux cheatsheet](https://tmuxcheatsheet.com/)
+    Your address was shown to you in the output of the above command.
 
 4. ### Run bet
     
