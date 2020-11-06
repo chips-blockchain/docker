@@ -6,9 +6,10 @@
 > **Be aware that Docker has EVERYTHING already installed, so you are not installing anything
 You are only running things.**
 
-Join the [CHIPS discord](https://discord.gg/bcSpzWb) to get a small amount of CHIPS
 
-1. ### Run Docker container
+1. ### Pull and run the docker image
+
+    `docker pull piggydoughnut/bet:v1.5`
 
     The Docker container will run as a daemon.
 
@@ -29,6 +30,8 @@ Join the [CHIPS discord](https://discord.gg/bcSpzWb) to get a small amount of CH
 3. ### Fund your CHIPS address. 
 
     Your address was shown to you in the output of the above command.
+    
+    Join the [CHIPS discord](https://discord.gg/bcSpzWb) to get a small amount of CHIPS
 
 4. ### Run bet
     
