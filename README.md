@@ -19,15 +19,11 @@
 
 ## Docker
 
-[Docker image lives here](https://hub.docker.com/r/piggydoughnut/bet)
-
-Pull the image
-    
-    docker pull piggydoughnut/bet:v1.4
-
 The Docker image has all the necessary libraries, dependencies and all have been installed, compiled, built, cloned, etc. You only need to start the processes needed for the game to work and do some configuration.
 
 Everything lives in the home folder `cd ~`
+
+[Docker image on DockerHub](https://hub.docker.com/r/piggydoughnut/bet)
 
 You can:
 
