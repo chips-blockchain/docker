@@ -1,13 +1,11 @@
 # Pangea Docker container with CHIPS and LN inside the container
 
----------------------
-## Run all inside the container
 
 > **Be aware that Docker has EVERYTHING already installed, so you are not installing anything
 You are only running things.**
 
 
-1. ### Pull and run the docker image
+1. ## Pull and run the docker image
 
     `docker pull piggydoughnut/bet:v1.5`
 
@@ -17,7 +15,7 @@ You are only running things.**
 
     > Note: the Docker container will use your VPS's host network so your player IP will be your VPS IP
 
-2. ### Run LN and Chips
+2. ## Run LN and Chips
 
     Enter the Docker container terminal
 
@@ -27,13 +25,13 @@ You are only running things.**
 
     `./root/bet/scripts/runservices.sh`
 
-3. ### Fund your CHIPS address. 
+3. ## Fund your CHIPS address. 
 
     Your address was shown to you in the output of the above command.
     
     Join the [CHIPS discord](https://discord.gg/bcSpzWb) to get a small amount of CHIPS
 
-4. ### Run bet
+4. ## Run bet
     
     Run the node that you need to run. Are you hosting a game? -> Run Dealer. Do you just want to play the game and someone is hosting it for you? -> Run Player.
     
