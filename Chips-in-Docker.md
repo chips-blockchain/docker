@@ -22,7 +22,7 @@ Join the [CHIPS discord](https://discord.gg/bcSpzWb) to get a small amount of CH
 
     `sudo docker exec -it bet bash`
 
-    Run LN and CHIPS
+    Run LN and CHIPS. The following command will also generate a CHIPS address for you. It will show your address in the output.
 
     `./root/bet/scripts/runservices.sh`
 
