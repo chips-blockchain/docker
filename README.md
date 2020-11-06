@@ -1,39 +1,23 @@
 # Docker documentation for CHIPS Poker 
 
-[Manual Installation](README.md#manual-installation)
-
-[Docker](README.md#docker) 
-
-[Compile the Docker image](README.md#compile-the-docker-image)
-
-[FAQ](README.md#more-information-on-the-project)
-
-[Thank you](README.md#thank-you)
-
 > Any of the nodes which are used to play must have a publicly accessible IP.
 
+[Docker image on DockerHub](https://hub.docker.com/r/piggydoughnut/bet)
 
-## Manual Installation
+`docker pull piggydoughnut/bet:v1.5`
 
-[Compilation guide](https://github.com/chips-blockchain/bet/blob/master/compile.md)
-
-## Docker
+## Run Docker to play the game
 
 The Docker image has all the necessary libraries, dependencies and all have been installed, compiled, built, cloned, etc. You only need to start the processes needed for the game to work and do some configuration.
 
 Everything lives in the home folder `cd ~`
 
-[Docker image on DockerHub](https://hub.docker.com/r/piggydoughnut/bet)
+There are two options for two types of users.
 
-You can:
+1. You have done no preparations and want the easiest option to run the game. [Run the Docker container and run `chips` and `ln` inside of it](Chips-in-Docker.md)
 
-- [Run the Docker container and run `chips` and `ln` inside of it](Chips-in-Docker.md)
+2. You know what you are doing and already have `CHIPS` and `LN` running locally (or you would like to have). [Plug in your `ln` and `chips` that will run outside of the container](Chips-outside-of-Docker.md)
 
-  Be aware, if you delete your Docker container by accident you can loose the synced LN, your wallet, etc.
-
-OR
-
-- [Plug in your `ln` and `chips` that will run outside of the container](Chips-outside-of-Docker.md)
 
 ## Compile the Docker image
 
