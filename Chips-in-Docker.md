@@ -26,41 +26,6 @@ Join the [CHIPS discord](https://discord.gg/bcSpzWb) to get a small amount of CH
 
     `./root/bet/scripts/runservices.sh`
 
-    The output will look like this
-
-
-    ```shell
-    This will take about 3-5 minutes. Please be patient.
-
-    Creating CHIPS config
-    nonce.9250234
-    0000006e75f6aa0efdbf7db03132aa4e4d0c84951537a6f5a7c39a0a9d30e1e7 <- genesis
-    9bd1c477af8993947cdd9052c0e4c287fda95987b3cc8934b3769d7503852715 <- merkle
-    Chips server starting
-    |................................................................................| 100 % finished
-    Starting Lightning node
-    |................................................................................| 100 % finished
-
-    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-    CHIPS and Lightning Node are running
-
-    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-    NEXT STEPS
-
-    1. FUND YOUR CHIPS ADDRESS with CHIPS to be able to join the game.
-    { "address": "bUBbFW6yYTH3qXmynTyBtQ1FEcVSDT7ZNw" }
-
-    2. Run bet (player OR dealer).
-
-    DEALER
-    cd ~/bet/privatebet && ./bet dcv 45.77.139.155
-
-    PLAYER
-    cd ~/bet/privatebet && ./bet player
-    ```
-
 3. ### Fund your CHIPS address. 
 
     Your address was shown to you in the output of the above command.
