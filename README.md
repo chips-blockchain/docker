@@ -1,7 +1,5 @@
 # Docker documentation for CHIPS Poker 
 
-> Any of the nodes which are used to play must have a publicly accessible IP.
-
 ```diff
 - Any of the nodes which are used to play must have a publicly accessible IP.
 - LN node will need some time to sync so it is advisable to set up the game a day in advance.
