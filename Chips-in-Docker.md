@@ -1,8 +1,10 @@
 # Pangea Docker container with CHIPS and LN inside the container
 
 
-> **Be aware that Docker has EVERYTHING already installed, so you are not installing anything
-You are only running things.**
+```diff
+- LN might take several hours to sync. You might want to let it run overnight.
+- Be aware that Docker has EVERYTHING already installed, so you are not installing anything. You are only running things.
+```
 
 The following is installation guide will work for Linux, Mac and Windows, providing that Docker is installed.
 
@@ -58,7 +60,5 @@ E.g. I want to run a player node and a dealer node. I need:
     `ln is 286576 blocks behind chips network`
     
     Let the LN sync and come back later when ln has synched and run it again. You can exit the bet script (`Ctrl+C`), but DO NOT STOP the Docker container. Make sure it is running in the background, after you exit it. To exit the Docker container just type `exit` followed by an Enter. 
-
-    LN might take several hours to sync. You might want to let it run overnight..
    
 
