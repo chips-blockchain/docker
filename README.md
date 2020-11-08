@@ -2,6 +2,11 @@
 
 > Any of the nodes which are used to play must have a publicly accessible IP.
 
+```diff
+- Any of the nodes which are used to play must have a publicly accessible IP.
+- LN node will need some time to sync so it is advisable to set up the game a day in advance.
+```
+
 [Docker image on DockerHub](https://hub.docker.com/r/piggydoughnut/bet)
 
 `docker pull piggydoughnut/bet:v1.5`
