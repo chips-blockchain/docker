@@ -164,7 +164,7 @@ Join the [CHIPS discord](https://discord.gg/bcSpzWb) to get a small amount of CH
 
 ## 2. Run Docker container
 
-    `docker run --net=host --name bet -t -i -v /$HOME/.chips:/root/.chips:rw  -v /$HOME/.chipsln:/root/.chipsln:rw piggydoughnut/bet:v1.3`
+    docker run --net=host --name bet -t -i -v /$HOME/.chips:/root/.chips:rw  -v /$HOME/.chipsln:/root/.chipsln:rw piggydoughnut/bet:v1.5
 
 ## 3. Run bet
 
