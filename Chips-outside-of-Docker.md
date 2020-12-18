@@ -166,13 +166,28 @@ Join the [CHIPS discord](https://discord.gg/bcSpzWb) to get a small amount of CH
 
     docker run --net=host --name bet -t -i -v /$HOME/.chips:/root/.chips:rw  -v /$HOME/.chipsln:/root/.chipsln:rw piggydoughnut/bet:v1.5
 
-## 3. Run bet
+## 3.  Run bet
+    
+    Run the node that you need to run. Are you hosting a game? -> Run Dealer. Do you just want to play the game and someone is hosting it for you? -> Run Player.
+ 
+  ### Running Bet Dealer
 
-    [Run dealer](https://github.com/chips-blockchain/bet/blob/master/compile.md#running-bet-dealer)
+    # e.g. Dealer node is at 45.77.139.155 (you will know this IP from someone who will be running a dealer node OR you can run the dealer node yourself, then you will use the IP of our dealer node)
+    $ cd ~/bet/privatebet && ./bet dcv 45.77.139.155
 
-    [Run player](https://github.com/chips-blockchain/bet/blob/master/compile.md#running-bet-player)    
+  
+  ### Running Bet Player
+  
+    $ cd ~/bet/privatebet && ./bet player
+    
+  If you have not allowed for the ln to sync the script will tell you that it is behind ln by a number of blocks. E.g.
+    
+    `ln is 286576 blocks behind chips network`
+    
+  Let the LN sync and come back later when ln has synched and run it again. You can exit the bet script (`Ctrl+C`), but DO NOT STOP the Docker container. 
+  
+  Make sure it is running in the background, after you exit it. To exit the Docker container just type `exit` followed by an Enter. To check if it is running in the background `docker ps`
+   
 
-    If you have not allowed for the ln to sync the script will tell you that it is behind ln by a number of blocks.
-You can either leave the script running until it syncs or come back later when ln has synched and run it again.
 
 <img src="https://media.giphy.com/media/jQWUkD7a4AWfkraBJa/giphy.gif" width="300" height="262" />
