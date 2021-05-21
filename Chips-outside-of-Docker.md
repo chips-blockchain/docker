@@ -33,42 +33,6 @@ $ rm CHIPS-bootstrap.tar.gz
 
 ### Running CHIPS Daemon
 
-  #### Create `chips.conf` file
-
-  Create chips.conf file with random username, password, txindex and daemon turned on:
-    
-  ```shell
-  cd ~
-  mkdir .chips
-  nano .chips/chips.conf
-  ```
-
-  Add the following lines into your `chips.conf` file
-
-  ```JSON
-  server=1
-  daemon=1
-  txindex=1
-  rpcuser=chipsuser
-  rpcpassword=passworddrowssap
-  addnode=159.69.23.29
-  addnode=95.179.192.102
-  addnode=149.56.29.163
-  addnode=145.239.149.173
-  addnode=178.63.53.110
-  addnode=151.80.108.76
-  addnode=185.137.233.199
-  rpcbind=127.0.0.1
-  rpcallowip=127.0.0.1
-  ```
-
-  #### Symlinking the binaries (already done in Docker container)
-  ```shell
-  sudo ln -sf /root/chips/src/chips-cli /usr/local/bin/chips-cli
-  sudo ln -sf /root/chips/src/chipsd /usr/local/bin/chipsd
-  sudo chmod +x /usr/local/bin/chips-cli
-  sudo chmod +x /usr/local/bin/chipsd
-  ```
   #### Run
   ```shell
   cd ~
