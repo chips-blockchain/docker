@@ -1,45 +1,32 @@
 # Docker documentation for CHIPS Poker 
 
-```diff
-- Any of the nodes which are used to play must have a publicly accessible IP.
-- LN node will need some time to sync so it is advisable to set up the game a day in advance.
-```
 
 [Docker image on DockerHub](https://hub.docker.com/r/piggydoughnut/bet)
 
-`docker pull piggydoughnut/bet:v1.5`
-
 ## Run Docker to play the game
 
-The Docker image has all the necessary libraries, dependencies and all have been installed, compiled, built, cloned, etc. You only need to start the processes needed for the game to work and do some configuration.
+The Docker image has all the necessary libraries, dependencies nstalled, compiled, built, cloned, etc. You only need to start the processes needed for the game to work and do some configuration.
 
 Everything lives in the home folder `cd ~`
 
 There are two options for two types of users.
 
-1. You have done no preparations and want the easiest option to run the game. [Run the Docker container and run `chips` and `ln` inside of it](Chips-in-Docker.md)
+### OPTION 1 
 
-2. You know what you are doing and already have `CHIPS` and `LN` running locally (or you would like to have). [Plug in your `ln` and `chips` that will run outside of the container](Chips-outside-of-Docker.md)
+You have done no preparations and want the easiest option to run the game. 
 
+[Run the Docker container and run `chips` and `ln` inside of it](Chips-in-Docker.md)
 
-## Compile the Docker image
+### OPTION 2 
 
-If you want to collaborate on the Dockerfile or feel the desire to recompile the image yourself.
+You know what you are doing and already have `CHIPS` and `LN` running locally (or you would like to have). 
 
-    docker build .
-
-You need the `image-id` of the built image
-
-    docker images
-
-Run the image
-
-    docker run --net=host --name bet -dit image-id
+[Plug in your `ln` and `chips` that will run outside of the container](Chips-outside-of-Docker.md)
 
 
 ## More information on the project
 
-[CHIPS documentation](https://docs.chips.cash/en/latest/)
+https://chips.cash
 
 ## Thank you
 
