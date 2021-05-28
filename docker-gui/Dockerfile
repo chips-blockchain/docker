@@ -10,8 +10,12 @@
 # EXPOSE 1234
 
 FROM node:12
-RUN cd ~ && git clone https://github.com/chips-blockchain/pangea-poker.git && cd ~/pangea-poker && npm install
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+RUN cd ~ && git clone https://github.com/chips-blockchain/pangea-poker.git && cd ~/pangea-poker && npm install && git checkout dev
 
 EXPOSE 1234
+
 WORKDIR "/root/pangea-poker"
-CMD [ "npm", "run", "prod" ]
+CMD [ "npm", "run", "dev" ]
