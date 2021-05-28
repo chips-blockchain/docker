@@ -2,6 +2,9 @@
 
 If you do not have the `ln` and `chips` running locally yet but would like to have that setup, see https://github.com/chips-blockchain/bet/blob/master/docs/HowToPangea.md.
 
+## Pull image
+
+    docker pull piggydoughnut/bet:v1.6
 
 ## Run Docker container
 
