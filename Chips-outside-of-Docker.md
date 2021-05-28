@@ -7,7 +7,7 @@ If you do not have the `ln` and `chips` running locally yet but would like to ha
 
     docker run --net=host --name bet -t -i -v /$HOME/.chips:/root/.chips:rw  -v /$HOME/.chipsln:/root/.chipsln:rw piggydoughnut/bet:v1.5
 
-## 2.  Run bet
+## Run bet
     
    Run the node that you want to run. Are you hosting a game? -> Run Dealer. Do you just want to play the game and someone is hosting it for you? -> Run Player.
 
