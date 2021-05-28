@@ -85,7 +85,7 @@ E.g. I want to run a player node and a dealer node. I need:
 
 4. ## Fund your nodes. 
     
-    Once you setup your nodes, you need to fund them. See [Fund your nodes instructions](./setup_fund_nodes.md).
+    Once you setup your nodes, you need to fund them. See [Fund your nodes instructions](https://github.com/chips-blockchain/bet/blob/master/docs/setup_fund_nodes.md).
     
     Join the [CHIPS discord](https://discord.gg/bcSpzWb) to get a small amount of CHIPS
 
