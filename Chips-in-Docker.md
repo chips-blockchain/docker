@@ -20,7 +20,7 @@ E.g. I want to run a player node and a dealer node. I need:
 
     The Docker container will run as a daemon.
 
-    `docker run --net=host --name bet -dit piggydoughnut/bet:v1.5`
+    `docker run --net=host --name bet -dit piggydoughnut/bet:v1.6`
 
     > Note: the Docker container will use your VPS's host network so your player IP will be your VPS IP
 
