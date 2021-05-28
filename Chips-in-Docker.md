@@ -70,7 +70,7 @@ E.g. I want to run a player node and a dealer node. I need:
 
    Then inside the tmux session you've just created
    ```
-   lightningd --log-level=debug &
+   lightning --log-level=debug &
    # CTRL + B, then D to detach from the tmux session, to attach to the session again `tmux a -t lightning`
    ```
 
